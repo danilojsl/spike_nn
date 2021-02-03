@@ -9,8 +9,8 @@ class SimpleLstm:
     def __init__(self):
         # LSTM Network architecture
         self.time_steps = 3
-        self.number_features = 1
-        self.hidden_state_size = 2
+        self.number_features = 2
+        self.hidden_state_size = 4
 
         # Input data
         self.sample_size = 1  # batch size
@@ -34,8 +34,9 @@ class SimpleLstm:
         print("Cell State for last time step: " + str(cell_state))
 
     def get_input(self):
-        random_input = np.random.rand(self.sample_size, self.time_steps)
+        random_input = np.random.rand(self.time_steps, self.number_features)
         input_sequence = random_input.reshape((self.sample_size, self.time_steps, self.number_features))
+        print("Input Sequence: " + str(input_sequence))
         return input_sequence
 
 

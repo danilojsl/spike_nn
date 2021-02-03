@@ -1,16 +1,14 @@
 import torch
 import torch.nn as nn
 
-# Example of NN https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html
-
 
 class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
         # LSTM Network architecture
-        self.number_features = 1
-        self.hidden_state_size = 2
+        self.number_features = 2
+        self.hidden_state_size = 4
         self.num_layers = 1
 
         # Input data
@@ -33,8 +31,9 @@ class Net(nn.Module):
         print("Cell State for t=seq_len : " + str(cell_state))
 
     def get_input(self):
-        random_input = torch.rand((self.sample_size, self.time_steps))
+        random_input = torch.rand((self.time_steps, self.number_features))
         input_sequence = random_input.reshape(self.time_steps, self.sample_size, self.number_features)
+        print("Input Sequence: " + str(input_sequence))
         return input_sequence
 
 
