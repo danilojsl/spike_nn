@@ -26,5 +26,31 @@ def concat_three_tensors():
     print(result)
 
 
+def sum_tensors():
+    tensor1 = torch.rand(2, 3)
+    print(tensor1)
+    tensor2 = torch.rand(2, 3)
+    print(tensor2)
+
+    plus_result = tensor1 + tensor2
+    print(plus_result)
+
+
+def autograd():
+    x = torch.ones(1, requires_grad=True)
+    # Prints None since there is nothing to be calculated
+    print(x.grad)
+
+
+def working_autograd():
+    x = torch.ones(1, requires_grad=True)
+    y = x + 2
+    z = y * y * 2
+    # The gradient this time is calculated since z is a function of y and y a function of x
+    z.backward()    # automatically calculates the gradient
+    print(x.grad)   # ∂z/∂x = 12
+
+
 if __name__ == '__main__':
-    concat_three_tensors()
+    sum_tensors()
+    working_autograd()

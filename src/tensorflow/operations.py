@@ -1,7 +1,8 @@
 import numpy as np
+import tensorflow as tf
 
 
-def concat_two_tensors():
+def concat_two_numpy():
     array1 = np.random.rand(1, 3)
     array2 = None
     arrays = [array1, array2]
@@ -13,7 +14,7 @@ def concat_two_tensors():
     print(result)
 
 
-def concat_three_tensors():
+def concat_three_numpy():
     array1 = np.random.rand(2, 3)
     array2 = np.random.rand(2, 3)
     array3 = None
@@ -26,5 +27,16 @@ def concat_three_tensors():
     print(result)
 
 
+def sum_tensors():
+    tensor1 = tf.random.normal(shape=[2, 3])
+    print(tensor1)
+    tensor2 = tf.random.normal(shape=[2, 3])
+    print(tensor2)
+
+    plus_result = tensor1 + tensor2
+    print(plus_result)
+
+
 if __name__ == '__main__':
-    concat_two_tensors()
+    tf.compat.v1.enable_eager_execution()
+    sum_tensors()
