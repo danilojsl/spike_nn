@@ -1,0 +1,14 @@
+tf2onnx1.9.2:›
+»
+dense_input
+@StatefulPartitionedCall/sequential/dense/MatMul/ReadVariableOp:01StatefulPartitionedCall/sequential/dense/MatMul:0/StatefulPartitionedCall/sequential/dense/MatMul"MatMul
+o
+1StatefulPartitionedCall/sequential/dense/MatMul:0dense-StatefulPartitionedCall/sequential/dense/Relu"Relutf2onnx*zB@StatefulPartitionedCall/sequential/dense/MatMul/ReadVariableOp:0J0Ä».¿`‹M¿`Læ>Z½¾(q;>Ä‰b?À5½Ilş¾ø«—½@Í§=°S?h•×½R!converted from tf-onnx-test-modelZ#
+dense_input
+
+unk__6
+b
+dense
+
+unk__7
+B
